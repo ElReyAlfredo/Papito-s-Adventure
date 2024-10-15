@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfq0ij3yqs83x"]
+
+[ext_resource type="Texture2D" uid="uid://ywlscauepext" path="res://characters/Ghastly Eye/GhastlyEye.png" id="1_ds2xw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsxpa"]
+atlas = ExtResource("1_ds2xw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4rx3"]
+atlas = ExtResource("1_ds2xw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hpfa"]
+atlas = ExtResource("1_ds2xw")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv6fa"]
+atlas = ExtResource("1_ds2xw")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bijcr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsxpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4rx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hpfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv6fa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pnwa3"]
+radius = 7.0
+
+[node name="Node2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bijcr")
+frame = 2
+frame_progress = 0.0479431
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pnwa3")
